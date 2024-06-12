@@ -1,0 +1,30 @@
+/* AcercaDeNosotros.css */
+.card-img-container {
+  height: 200px;
+  overflow: hidden;
+}
+
+.card-img-container img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.banner-img {
+  height: 500px;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .banner-img {
+    height: 300px;
+  }
+}
+
+.developer-avatar {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
