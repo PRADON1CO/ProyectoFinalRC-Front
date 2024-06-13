@@ -1,5 +1,24 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.bgVerde{
+  background: #7fb80f ;
+}
+
+.imgLogo{
+  width: 150px;
+}
+
+.nav-item, .navbar p, .navbar i{
+  font-size: 15px;
+}
+
+
+@media (min-width: 768px){
+  .nav-item, .navbar p, .navbar i{
+    font-size: 21px;
+  }
 }
