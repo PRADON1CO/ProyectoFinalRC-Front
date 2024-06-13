@@ -3,6 +3,7 @@ import { Container, Form, Button, Row, Col, Carousel } from 'react-bootstrap';
 import Swal from 'sweetalert2';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+
 const FormularioInscripcion = () => {
   const [form, setForm] = useState({
     nombreSocio: '',
@@ -32,7 +33,7 @@ const FormularioInscripcion = () => {
     <Container className="my-5">
       <h1 className="mb-4 text-center">Formulario de Inscripción - FitFactory</h1>
 
-      <Carousel className="mb-5 carousel-custom">
+      <Carousel className="mb-5">
         <Carousel.Item>
           <img
             className="d-block w-100"
