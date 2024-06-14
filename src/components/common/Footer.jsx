@@ -15,13 +15,13 @@ const Footer = () => {
             <a className="text-decoration-none link-dark text-white" to="/">
               <p>Inicio</p>
             </a>
-            <a className="text-decoration-none link-dark text-white" to="/menu">
-              <p>Menú</p>
+            <a className="text-decoration-none link-dark text-white" to="/login">
+              <p>Login</p>
             </a>
             <a className="text-decoration-none link-dark text-white" to="/nosotros">
               <p>Nosotros</p>
             </a>
-            <a className="text-decoration-none link-dark text-white" to="*">
+            <a className="text-decoration-none link-dark text-white" to="/contacto">
               <p>Contacto</p>
             </a>
           </Col>
@@ -45,17 +45,17 @@ const Footer = () => {
             <div>
               <div>
                 <p className="text-white link-dark">
-                <i className="bi bi-telephone-fill "></i> 123-1234567
+                <i className="bi bi-whatsapp"></i> 123-1234567
                 </p>
+                <p className="text-white link-dark">
+                <i className="bi bi-instagram"></i> FitFactory
+                </p>
+                <p className="text-white link-dark">
+                <i className="bi bi-facebook"></i> FitFactory
+                </p>               
                 <p className="text-white link-dark">
                 <i className="bi bi-geo-alt-fill"></i> Gral. Paz
                   576
-                </p>
-                <p className="text-white link-dark">
-                <i className="bi bi-telephone-fill"></i> 123-1234567
-                </p>
-                <p className="text-white link-dark">
-                <i className="bi bi-telephone-fill"></i> 123-1234567
                 </p>
               </div>
              
