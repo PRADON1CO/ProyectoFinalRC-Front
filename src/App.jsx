@@ -18,6 +18,7 @@ function App() {
     // </BrowserRouter>
     <>
       <Menu></Menu>
+      <Inicio></Inicio>
       <Footer></Footer>
     </>
   )

@@ -35,12 +35,22 @@ const Menu = () => {
             </li>
             <li className="nav-item">
               <a className="nav-link" href="#">
+                Contacto
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link d-lg-none d-md-none" href="#">
+                Nosotros
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="#">
                 Login
               </a>
             </li>
           </ul>
           <div className="navbar">
-            <p><i class="bi bi-cloud-hail-fill"></i> 9°c</p>
+            <p><i className="bi bi-cloud-hail-fill"></i> 9°c</p>
           </div>
         </div>
       </Container>
