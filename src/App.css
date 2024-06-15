@@ -39,8 +39,19 @@
   justify-content: center;
   align-items: center;
   color: white;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Opcional: agrega sombra al texto para mejorar legibilidad */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); 
 }
+
+.nav-link:hover {
+  color: white !important; 
+  transition-duration: 0.4s; 
+  transition-timing-function: ease-out; 
+}
+
+
+
+
+
 
 @media (min-width: 768px){
   .nav-item, .navbar p, .navbar i{
