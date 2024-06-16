@@ -16,9 +16,12 @@
   flex-grow: 1;
 }
 
-
 .bgVerde{
-  background: #7fb80f ;
+  background: #7fb80f !important;
+}
+
+.colorVerde{
+  color: #7fb80f;
 }
 
 .imgLogo{
@@ -48,13 +51,45 @@
   transition-timing-function: ease-out; 
 }
 
+.promocion{
+  width: 90%;
+  height: 250px;
+  object-fit: cover;
+}
 
+.card-img-top-nueva {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
 
+.efectoCard{
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
 
+.p-precio {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.fontWeight{
+  font-weight:400 !important;
+}
 
 
 @media (min-width: 768px){
   .nav-item, .navbar p, .navbar i{
     font-size: 21px;
+  }
+
+  .promocion{
+    width: 70%;
+    height: 400px;
+    object-fit: cover;
+  }
+
+  .banner{
+    height: 650px;
   }
 }
