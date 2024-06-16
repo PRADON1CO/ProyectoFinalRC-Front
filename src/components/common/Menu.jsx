@@ -17,6 +17,7 @@ const Menu = () => {
             <Nav.Link href="#" className="nav-link fontWeight">Administrador</Nav.Link>
             <Nav.Link href="#" className="nav-link fontWeight">Contacto</Nav.Link>
             <Nav.Link href="#" className="nav-link fontWeight d-lg-none d-md-none">Nosotros</Nav.Link>
+            <Nav.Link href="#" className="nav-link fontWeight">Productos</Nav.Link>
             <Nav.Link href="#" className="nav-link fontWeight">Login</Nav.Link>
           </Nav>
           <div className="navbar">
