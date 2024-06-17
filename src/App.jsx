@@ -6,6 +6,7 @@ import DetalleDelPlan from "./components/pages/DetalleDelPlan";
 import Menu from "./components/common/Menu"
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Footer from './components/common/Footer';
+import Error404 from './components/pages/Error404';
 
 
 function App() {
@@ -18,7 +19,7 @@ function App() {
     // </BrowserRouter>
     <>
       <Menu></Menu>
-      <Inicio></Inicio>
+      <Error404></Error404>
       <Footer></Footer>
     </>
   )

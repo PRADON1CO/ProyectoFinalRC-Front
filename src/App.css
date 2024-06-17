@@ -93,3 +93,10 @@
     height: 650px;
   }
 }
+
+@media (min-width: 992px){
+  .imgError404{
+    width: 700px;
+    height: 700px;
+  }
+}
