@@ -1,6 +1,7 @@
 import { Button, Form } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import '../../styles/login.css';
+import { Link } from "react-router-dom";
 
 const Login = () => {
   const {
@@ -75,21 +76,22 @@ const Login = () => {
             </Button>
           </div>
           <div className="d-flex justify-content-center">
-            <button className="btn btn-link">¿Has olvidado tu contraseña?</button>
+            <Link to='*' className="btn btn-link text-dark">¿Has olvidado tu contraseña?</Link>
           </div>
           <div className="d-flex justify-content-center">
-            <button className="btn btn-outline-danger mx-auto mb-3 mt-1 mt-lg-3">
+            <Link to='*' className="btn btn-outline-danger mx-auto mb-3 mt-1 mt-lg-3">
               <i className="fa-brands fa-google"></i> Ingresar con Google
-            </button>
+            </Link>
           </div>
           <div className="d-flex justify-content-center">
-            <button className="btn btn-outline-primary mx-auto mb-2 my-lg-3">
+            <Link to='*' className="btn btn-outline-primary mx-auto mb-2 my-lg-3">
               <i className="fa-brands fa-facebook"></i> Ingresar con Facebook
-            </button>
+            </Link>
           </div>
-          <p className="text-center">
-            ¿Aún no te creaste una cuenta? <button className="btn btn-link">Crear cuenta</button>
-          </p>
+          <div className="d-flex justify-content-center flex-column">
+          <Link to='*' className="text-center text-dark">¿Aún no te creaste una cuenta? </Link>
+          <Link to='*' className="btn btn-link text-dark">Crear cuenta</Link>
+          </div>
         </Form>
       </section>
     </div>

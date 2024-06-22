@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import '../../styles/contacto.css';
+import { Link } from 'react-router-dom';
 
 const Contacto = () => {
   const [email, setEmail] = useState('');
@@ -59,15 +60,15 @@ const Contacto = () => {
           </div>
         </article>
         <div className="d-flex justify-content-center my-5 gap-2">
-          <button to="*" target="_blank" title="facebook" className='border-0 tamanioIconos bg-body-secondary'>
+          <Link to="*" title="facebook" className='border-0 tamanioIconos bg-body-secondary'>
           <i className="bi bi-facebook"></i>
-          </button>
-          <button to="*" target="_blank" title="instagram" className='border-0 tamanioIconos bg-body-secondary'>
+          </Link>
+          <Link to="*" title="instagram" className='border-0 tamanioIconos bg-body-secondary'>
             <i className="bi bi-instagram"></i>
-          </button>
-          <button to="*" target="_blank" title="twitter" className='border-0 tamanioIconos bg-body-secondary'>
+          </Link>
+          <Link to="*" title="twitter" className='border-0 tamanioIconos bg-body-secondary'>
             <i className="bi bi-twitter-x"></i>
-          </button>
+          </Link>
         </div>
         <div className="d-flex justify-content-center">
           <Form
