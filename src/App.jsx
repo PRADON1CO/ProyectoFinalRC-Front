@@ -8,6 +8,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Footer from './components/common/Footer';
 import Error404 from './components/pages/Error404';
 import Login from './components/pages/Login';
+import Contacto from './components/pages/Contacto';
 
 
 function App() {
@@ -20,7 +21,7 @@ function App() {
     // </BrowserRouter>
     <>
       <Menu></Menu>
-      <Login></Login>
+      <Contacto></Contacto>
       <Footer></Footer>
     </>
   )
