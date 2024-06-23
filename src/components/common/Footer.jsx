@@ -1,6 +1,7 @@
 import React from "react";
 import { Col, Container, Form, Row } from "react-bootstrap";
 import logo from "../../assets/logoRecortado.png";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -12,42 +13,42 @@ const Footer = () => {
           </Col>
           <Col className="d-none d-md-block text-white">
             <h4 className="text-white">Opciones</h4>
-            <a className="text-decoration-none link-dark text-white" to="/">
+            <Link className="text-decoration-none link-dark text-white" to="/">
               <p>Inicio</p>
-            </a>
-            <a
+            </Link>
+            <Link
               className="text-decoration-none link-dark text-white"
               to="/login"
             >
               <p>Login</p>
-            </a>
-            <a
+            </Link>
+            <Link
               className="text-decoration-none link-dark text-white"
               to="/nosotros"
             >
               <p>Nosotros</p>
-            </a>
-            <a
+            </Link>
+            <Link
               className="text-decoration-none link-dark text-white"
               to="/contacto"
             >
               <p>Contacto</p>
-            </a>
+            </Link>
           </Col>
           <Col xs={12} md={4} lg={3} className="">
             <h4 className="text-white">Información</h4>
-            <a className="text-decoration-none link-dark text-white" to="*">
+            <Link className="text-decoration-none link-dark text-white" to="*">
               <p>Políticas de privacidad</p>
-            </a>
-            <a className="text-decoration-none link-dark text-white" to="*">
+            </Link>
+            <Link className="text-decoration-none link-dark text-white" to="*">
               <p>Legal</p>
-            </a>
-            <a className="text-decoration-none link-dark text-white" to="*">
+            </Link>
+            <Link className="text-decoration-none link-dark text-white" to="*">
               <p>Promociones</p>
-            </a>
-            <a className="text-decoration-none link-dark text-white" to="*">
+            </Link>
+            <Link className="text-decoration-none link-dark text-white" to="*">
               <p>Horarios de atención</p>
-            </a>
+            </Link>
           </Col>
           <Col xs={12} md={4} lg={3} className="">
             <h4 className="text-white">Contacto</h4>
