@@ -2,14 +2,16 @@ import { Container } from "react-bootstrap";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import logo from "../../assets/logoRecortado.png";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Menu = () => {
   return (
     <Navbar expand="lg" className="bgVerde">
       <Container fluid>
         <Navbar.Brand href="#">
-          <img src={logo} alt="Logo" className="imgLogo" />
+          <Link to='/'>
+            <img src={logo} alt="Logo" className="imgLogo" />
+          </Link>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarNav" />
         <Navbar.Collapse id="navbarNav">
