@@ -79,12 +79,12 @@ const Login = () => {
             <Link to='*' className="btn btn-link text-dark">¿Has olvidado tu contraseña?</Link>
           </div>
           <div className="d-flex justify-content-center">
-            <Link to='*' className="btn btn-outline-danger mx-auto mb-3 mt-1 mt-lg-3">
+            <Link to='*' className="btn btn-danger mx-auto mb-3 mt-1 mt-lg-3">
               <i className="fa-brands fa-google"></i> Ingresar con Google
             </Link>
           </div>
           <div className="d-flex justify-content-center">
-            <Link to='*' className="btn btn-outline-primary mx-auto mb-2 my-lg-3">
+            <Link to='*' className="btn btn-primary mx-auto mb-2 my-lg-3">
               <i className="fa-brands fa-facebook"></i> Ingresar con Facebook
             </Link>
           </div>
