@@ -1,0 +1,36 @@
+.imgAdministrador{
+    width: 200px;
+    width: 150px;
+    object-fit: cover;
+}
+
+.fondoAdmin{
+    background-image: url('../assets/fondoAdmin.png');
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+
+.table {
+    background-color: transparent;
+  }
+  
+.table th,
+.table td {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: #ddd; 
+    color: white;
+  }
+.table th {
+    font-weight: bold;
+}
+
+.btnOpciones{
+    background: transparent;
+    border: solid 1px white;
+}
+  
+.btnOpciones:hover{
+    background: white;
+    color: rgb(7, 7, 7);
+}
