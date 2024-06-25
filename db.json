@@ -1,19 +1,40 @@
 {
-  "posts": [
+  "clases": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
+      "nombreClase": "Yoga para Principiantes",
+      "nombreProfesor": "Ana García",
+      "imagen": "https://images.pexels.com/photos/3822622/pexels-photo-3822622.jpeg",
+      "descripcion_breve": "Una introducción suave a las posturas y técnicas de yoga.",
+      "fecha": "Lunes",
+      "horario": "08:00 AM - 09:00 AM",
+      "id": "yoga-beg-1a2b"
+    },
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "nombreClase": "Yoga Vinyasa",
+      "nombreProfesor": "Carlos Martínez",
+      "imagen": "https://images.pexels.com/photos/3822198/pexels-photo-3822198.jpeg",
+      "descripcion_breve": "Fluye a través de posturas de manera dinámica y continua.",
+      "fecha": "Martes",
+      "horario": "06:00 PM - 07:00 PM",
+      "id": "yoga-vin-3c4d"
+    },
+    {
+      "nombreClase": "Yoga Restaurativo",
+      "nombreProfesor": "Laura Hernández",
+      "imagen": "https://images.pexels.com/photos/4325396/pexels-photo-4325396.jpeg",
+      "descripcion_breve": "Relájate y recupérate con posturas sostenidas y suaves.",
+      "fecha": "Miércoles",
+      "horario": "08:00 PM - 09:00 PM",
+      "id": "yoga-res-5e6f"
+    },
+    {
+      "nombreClase": "Yoga Restaurativo",
+      "nombreProfesor": "Laura Hernández",
+      "imagen": "https://images.pexels.com/photos/4325396/pexels-photo-4325396.jpeg",
+      "descripcion_breve": "Relájate y recupérate con posturas sostenidas y suaves.",
+      "fecha": "Miércoles",
+      "horario": "08:00 PM - 09:00 PM",
+      "id": "yoga-res-5dfc"
     }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }

@@ -1,10 +1,27 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Table } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "../../styles/administrador.css";
 import ItemClase from "../clases/ItemClase";
+import { listarClases } from "../helpers/queries";
 
 const Administrador = () => {
+  const [clases, setClases] = useState([]);
+
+  useEffect (() => {
+    obtenerClases()
+  }, [])
+
+  const obtenerClases = async() => {
+    const respuesta = await listarClases();
+    if(respuesta.status === 200){
+      const datos = await respuesta.json();
+      setClases(datos);
+    }else{
+      //Notificarle al usuario atraves de un mensaje
+    }
+  }
+
   return (
     <div className='bg-black'>
       <section className="container mainSection ">
@@ -27,11 +44,9 @@ const Administrador = () => {
             </tr>
           </thead>
           <tbody>
-            <ItemClase></ItemClase>
-            <ItemClase></ItemClase>
-            <ItemClase></ItemClase>
-            <ItemClase></ItemClase>
-            <ItemClase></ItemClase>
+            {
+              clases.map((itemClase) => <ItemClase key={itemClase.id} clase={itemClase} setClases={setClases}></ItemClase> )
+            }
           </tbody>
         </Table>
       </section>

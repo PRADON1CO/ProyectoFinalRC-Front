@@ -1,17 +1,17 @@
 import { Button } from "react-bootstrap";
 
-const ItemClase = () => {
+const ItemClase = ({clase, setClases}) => {
   return (
     <tr>
-      <td className="text-center">1</td>
-      <td>Martina Gomez</td>
-      <td className="">Lunes y martes</td>
-      <td>16:00 a 17:30</td>
+      <td className="text-center">{clase.nombreClase}</td>
+      <td>{clase.nombreProfesor}</td>
+      <td className="">{clase.fecha}</td>
+      <td>{clase.horario}</td>
       <td className="text-center">
         <img
-          src="https://media.istockphoto.com/id/1398385367/es/foto/feliz-mujer-de-negocios-millennial-con-gafas-posando-con-las-manos-cruzadas.jpg?b=1&s=612x612&w=0&k=20&c=yeKcWYj6Tsx14UZBVZDYmSZKLEKtq6uM3RfOZjqdMWk="
+          src={clase.imagen}
           className="imgAdministrador"
-          alt="Gomez"
+          alt={clase.nombreProfesor}
         ></img>
       </td>
       <td className="text-center">
