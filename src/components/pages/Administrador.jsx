@@ -6,11 +6,11 @@ import ItemClase from "../clases/ItemClase";
 
 const Administrador = () => {
   return (
-    <div className='fondoAdmin'>
+    <div className='bg-black'>
       <section className="container mainSection ">
         <div className="d-flex justify-content-between align-items-center mt-5">
-          <h1 className="display-5 ">Gestionar Clases</h1>
-          <Link className="btn bgVerde" to={"/administrador/crear"}>
+          <h1 className="display-5 text-white">Gestionar Clases</h1>
+          <Link className="btn bgVerde" to={"/administrador/formulario"}>
             <i className="bi bi-file-earmark-plus fs-4"></i>
           </Link>
         </div>

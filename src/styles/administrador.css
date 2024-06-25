@@ -4,13 +4,6 @@
     object-fit: cover;
 }
 
-.fondoAdmin{
-    background-image: url('../assets/fondoAdmin.png');
-    background-size: cover;
-    background-position: center;
-    color: white;
-}
-
 .table {
     background-color: transparent;
   }
@@ -28,6 +21,7 @@
 .btnOpciones{
     background: transparent;
     border: solid 1px white;
+    color: white;
 }
   
 .btnOpciones:hover{

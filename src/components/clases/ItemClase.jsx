@@ -9,18 +9,18 @@ const ItemClase = () => {
       <td>16:00 a 17:30</td>
       <td className="text-center">
         <img
-          src="https://images.pexels.com/photos/2905825/pexels-photo-2905825.jpeg?auto=compress&cs=tinysrgb&w=300"
+          src="https://media.istockphoto.com/id/1398385367/es/foto/feliz-mujer-de-negocios-millennial-con-gafas-posando-con-las-manos-cruzadas.jpg?b=1&s=612x612&w=0&k=20&c=yeKcWYj6Tsx14UZBVZDYmSZKLEKtq6uM3RfOZjqdMWk="
           className="imgAdministrador"
           alt="Gomez"
         ></img>
       </td>
       <td className="text-center">
-        <Button className="m-1 btnOpciones">
+        <button className="btn m-1 btnOpciones">
           <i className="bi bi-pencil-square"></i>
-        </Button>
-        <Button className="btnOpciones">
+        </button>
+        <button className="btn btnOpciones">
           <i className="bi bi-trash"></i>
-        </Button>
+        </button>
       </td>
     </tr>
   );
