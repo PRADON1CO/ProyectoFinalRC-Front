@@ -1,5 +1,7 @@
 import { Button, Form } from "react-bootstrap";
 import { useForm } from "react-hook-form";
+import { crearClase } from "../helpers/queries";
+import Swal from "sweetalert2";
 
 const FormularioClase = () => {
   const {
@@ -10,8 +12,25 @@ const FormularioClase = () => {
     setValue,
   } = useForm();
 
-  const claseValidado = (clase) => {
-    console.log(clase);
+  const claseValidado = async (clase) => {
+    console.log(clase)
+    //tengo que pedir a la api crear el producto
+        const respuesta= await crearClase(clase)
+        console.log(respuesta)
+        if (respuesta.status === 201){
+          Swal.fire({
+            title: "Clase Creada!",
+            text: `La clase ( ${clase.nombreClase} ) fue creada correctamente`,
+            icon: "success"
+          });
+          reset()
+        }else{
+            Swal.fire({
+                title: "Ocurrio un error!",
+                text: `El producto " ${clase.nombreClase} " no fue creado. Intenta nuevamente en unos minutos`,
+                icon: "error"
+              });
+        }
   };
 
   return (
@@ -154,7 +173,7 @@ const FormularioClase = () => {
             </Form.Text>
           </Form.Group>
 
-          <Button type="submit" variant="success">
+          <Button type="submit" className="bgVerde border-0">
             Guardar
           </Button>
         </Form>
