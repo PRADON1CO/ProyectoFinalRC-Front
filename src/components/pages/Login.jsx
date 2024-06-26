@@ -1,7 +1,9 @@
 import { Button, Form } from "react-bootstrap";
 import { useForm } from "react-hook-form";
-import '../../styles/login.css';
-import { Link } from "react-router-dom";
+import "../../styles/login.css";
+import { Link, useNavigate } from "react-router-dom";
+import { login } from "../helpers/queries";
+import Swal from "sweetalert2";
 
 const Login = () => {
   const {
@@ -9,6 +11,25 @@ const Login = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
+
+  const navegacion = useNavigate();
+
+  const onSubmit = (usuario) => {
+    if (login(usuario)){
+      Swal.fire({
+        title: "  Usuario logueado",
+        text: "Bienvenido a Fit Factory",
+        icon: "success"
+      });
+      navegacion("/administrador")
+    } else {
+      Swal.fire({
+        title: "Error en el login",
+        text: "Email o contraseña incorrecta",
+        icon: "error"
+      });
+    }
+  };
 
   return (
     <div className="d-flex mainSection">
@@ -23,6 +44,7 @@ const Login = () => {
       <section className="sectionLogin bg-white">
         <div className="text-center">
           <h1 className="my-4">Inicia sesión</h1>
+          <Form onSubmit={handleSubmit(onSubmit)}></Form>
         </div>
         <Form className="px-2 px-md-5 pb-2 formText">
           <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -57,8 +79,14 @@ const Login = () => {
               placeholder="Ingrese una contraseña"
               {...register("password", {
                 required: "El password es obligatorio",
-                minLength: { value: 8, message: "El mínimo es de 8 caracteres" },
-                maxLength: { value: 12, message: "El máximo es de 12 caracteres" },
+                minLength: {
+                  value: 8,
+                  message: "El mínimo es de 8 caracteres",
+                },
+                maxLength: {
+                  value: 12,
+                  message: "El máximo es de 12 caracteres",
+                },
                 pattern: {
                   value: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/,
                   message:
@@ -71,26 +99,36 @@ const Login = () => {
             </Form.Text>
           </Form.Group>
           <div className="d-flex justify-content-center">
-            <Button className="mx-auto mb-3 bgVerde border-0" variant="success" type="submit">
+            <Button
+              className="mx-auto mb-3 bgVerde border-0"
+              variant="success"
+              type="submit"
+            >
               Ingresar
             </Button>
           </div>
           <div className="d-flex justify-content-center">
-            <Link to='*' className="btn btn-link text-dark">¿Has olvidado tu contraseña?</Link>
+            <Link to="*" className="btn btn-link text-dark">
+              ¿Has olvidado tu contraseña?
+            </Link>
           </div>
           <div className="d-flex justify-content-center">
-            <Link to='*' className="btn btn-danger mx-auto mb-3 mt-1 mt-lg-3">
+            <Link to="*" className="btn btn-danger mx-auto mb-3 mt-1 mt-lg-3">
               <i className="fa-brands fa-google"></i> Ingresar con Google
             </Link>
           </div>
           <div className="d-flex justify-content-center">
-            <Link to='*' className="btn btn-primary mx-auto mb-2 my-lg-3">
+            <Link to="*" className="btn btn-primary mx-auto mb-2 my-lg-3">
               <i className="fa-brands fa-facebook"></i> Ingresar con Facebook
             </Link>
           </div>
           <div className="d-flex justify-content-center flex-column">
-          <Link to='*' className="text-center text-dark">¿Aún no te creaste una cuenta? </Link>
-          <Link to='*' className="btn btn-link text-dark">Crear cuenta</Link>
+            <Link to="*" className="text-center text-dark">
+              ¿Aún no te creaste una cuenta?{" "}
+            </Link>
+            <Link to="*" className="btn btn-link text-dark">
+              Crear cuenta
+            </Link>
           </div>
         </Form>
       </section>
