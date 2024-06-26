@@ -5,7 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { login } from "../helpers/queries";
 import Swal from "sweetalert2";
 
-const Login = () => {
+const Login = ({ setUsuarioLogueado }) => {
   const {
     register,
     handleSubmit,
@@ -15,18 +15,19 @@ const Login = () => {
   const navegacion = useNavigate();
 
   const onSubmit = (usuario) => {
-    if (login(usuario)){
+    if (login(usuario)) {
       Swal.fire({
         title: "  Usuario logueado",
         text: "Bienvenido a Fit Factory",
-        icon: "success"
+        icon: "success",
       });
-      navegacion("/administrador")
+      setUsuarioLogueado(usuario.email);
+      navegacion("/administrador");
     } else {
       Swal.fire({
         title: "Error en el login",
         text: "Email o contraseña incorrecta",
-        icon: "error"
+        icon: "error",
       });
     }
   };
