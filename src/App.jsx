@@ -4,7 +4,7 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import Inicio from "./components/pages/Inicio";
 import DetalleDelPlan from "./components/pages/DetalleDelPlan";
 import Menu from "./components/common/Menu"
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Footer from './components/common/Footer';
 
 
