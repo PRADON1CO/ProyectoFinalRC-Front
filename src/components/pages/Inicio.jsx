@@ -3,8 +3,26 @@ import promocion from "../../assets/promocion.png";
 import CardClases from "../clases/CardClases";
 import CardPlanes from "../planes/CardPlanes";
 import CardInstructor from "../clases/CardInstructor";
+import { useEffect, useState } from "react";
+import { listarClases } from "../helpers/queries";
 
 const Inicio = () => {
+  const [clases, setClases] = useState([]);
+
+  useEffect(() => {
+    obtenerClases()
+  }, [])
+
+  const obtenerClases = async() =>{
+    const respuesta = await listarClases();
+    if(respuesta.status === 200){
+      const datos = await respuesta.json();
+      setClases(datos);
+    }else{
+      console.log("Error al obtener los productos");
+    }
+  }
+
   return (
     <div className="mainSection">
       <div className="banner text-center p-1">
@@ -22,9 +40,9 @@ const Inicio = () => {
         <div className="py-2">
           <h2 className="text-center pb-2">- Nuestra Clases -</h2>
           <Row>
-            <CardClases></CardClases>
-            <CardClases></CardClases>
-            <CardClases></CardClases>
+            {
+              clases.map((cardClases) => <CardClases key={cardClases.id} clase = {cardClases}></CardClases>)
+            }
           </Row>
         </div>
         <h2 className="text-center pb-2">- Planes -</h2>
@@ -35,9 +53,9 @@ const Inicio = () => {
         </Row>
         <h2 className="text-center">- Nuestros Instructores -</h2>
         <Row className="justify-content-center">
-          <CardInstructor></CardInstructor>
-          <CardInstructor></CardInstructor>
-          <CardInstructor></CardInstructor>
+          {
+            clases.map((instructores) => <CardInstructor key={instructores.id} instructor={instructores}></CardInstructor>)
+          }
         </Row>
       </Container>
     </div>
