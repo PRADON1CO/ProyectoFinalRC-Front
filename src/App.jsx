@@ -12,6 +12,8 @@ import Contacto from "./components/pages/Contacto";
 import Administrador from "./components/pages/Administrador";
 import FormularioClase from "./components/clases/FormularioClase";
 import { useState } from "react";
+import ListasRutasAdmin from "./components/routes/ListasRutasAdmin";
+import RutasPotegidas from "./components/routes/RutasPotegidas";
 
 function App() {
   const usuario = JSON.parse(sessionStorage.getItem("usuariofitfactory")) || "";
@@ -24,8 +26,10 @@ function App() {
         <Route path="/login" element={<Login setUsuarioLogueado={setUsuarioLogueado}></Login>}></Route>
         <Route path="/contacto" element={<Contacto></Contacto>}></Route>
         <Route
-          path="/administrador"
-          element={<Administrador></Administrador>}
+          path="/administrador/*"
+          element={<RutasPotegidas>
+            <ListasRutasAdmin></ListasRutasAdmin>
+          </RutasPotegidas>}
         ></Route>
         <Route path="*" element={<Error404></Error404>}></Route>
         <Route
