@@ -10,6 +10,7 @@ import Error404 from './components/pages/Error404';
 import Login from './components/pages/Login';
 import Contacto from './components/pages/Contacto';
 import Administrador from './components/pages/Administrador';
+import FormularioClase from './components/clases/FormularioClase';
 
 
 
@@ -24,6 +25,7 @@ function App() {
           <Route path='/contacto' element={<Contacto></Contacto>}></Route>
           <Route path='/administrador' element={<Administrador></Administrador>}></Route>
           <Route path='*' element={<Error404></Error404>}></Route>
+          <Route path='/administrador/formulario' element={<FormularioClase></FormularioClase>}></Route>
         </Routes>
         <Footer></Footer>
       </BrowserRouter>
