@@ -5,9 +5,11 @@ import logo from "../../assets/logoRecortado.png";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 
 const Menu = ({ usuarioLogueado, setUsuarioLogueado }) => {
+
   const navegacion = useNavigate();
+
   const logout = () => {
-    sessionStorage.removeItem(usuariofitfactory);
+    sessionStorage.removeItem('usuariofitfactory');
     setUsuarioLogueado("");
     navegacion("/");
   };
@@ -35,7 +37,11 @@ const Menu = ({ usuarioLogueado, setUsuarioLogueado }) => {
                 >
                   Administrador
                 </NavLink>
-                <Button variant="link" className="nav-link fontWeight" onClick={logout}>
+                <Button
+                  variant="link"
+                  className="nav-link fontWeight"
+                  onClick={logout}
+                >
                   logout
                 </Button>
               </>

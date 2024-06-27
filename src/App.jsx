@@ -26,11 +26,12 @@ function App() {
         <Route path="/login" element={<Login setUsuarioLogueado={setUsuarioLogueado}></Login>}></Route>
         <Route path="/contacto" element={<Contacto></Contacto>}></Route>
         <Route
-          path="/administrador/*"
-          element={<RutasPotegidas>
-            <ListasRutasAdmin></ListasRutasAdmin>
-          </RutasPotegidas>}
+          path="/administrador"
+          element={<Administrador></Administrador>}
         ></Route>
+        <Route path="/administrador/creaar" element={<FormularioClase></FormularioClase>}></Route>
+        <Route path="/administrador/editar" element={<FormularioClase></FormularioClase>}></Route>
+
         <Route path="*" element={<Error404></Error404>}></Route>
         <Route
           path="/administrador/formulario"
