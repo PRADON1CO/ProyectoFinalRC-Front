@@ -14,7 +14,7 @@ import FormularioClase from "./components/clases/FormularioClase";
 import { useState } from "react";
 import ListasRutasAdmin from "./components/routes/ListasRutasAdmin";
 import RutasProtegidas from "./components/routes/RutasProtegidas";
-
+import AcercaDeNosotros from "./components/pages/AcercaDeNosotros";
 
 function App() {
   const usuario = JSON.parse(sessionStorage.getItem("usuariofitfactory")) || "";
@@ -39,7 +39,7 @@ function App() {
             <ListasRutasAdmin></ListasRutasAdmin>
           </RutasProtegidas>}
         ></Route>
-
+        <Route path="*" element={<AcercaDeNosotros></AcercaDeNosotros>}></Route>
         <Route path="*" element={<Error404></Error404>}></Route>
         <Route
           path="/administrador/formulario"
