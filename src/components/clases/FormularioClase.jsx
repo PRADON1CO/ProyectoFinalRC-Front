@@ -1,9 +1,11 @@
 import { Button, Form } from "react-bootstrap";
 import { useForm } from "react-hook-form";
-import { crearClase } from "../helpers/queries";
+import { crearClase, editarClase, obtenerClase } from "../helpers/queries";
 import Swal from "sweetalert2";
+import { useEffect } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 
-const FormularioClase = () => {
+const FormularioClase = ({ creando }) => {
   const {
     register,
     handleSubmit,
@@ -12,25 +14,57 @@ const FormularioClase = () => {
     setValue,
   } = useForm();
 
-  const claseValidado = async (clase) => {
-    console.log(clase)
-    //tengo que pedir a la api crear el producto
-        const respuesta= await crearClase(clase)
-        console.log(respuesta)
-        if (respuesta.status === 201){
-          Swal.fire({
-            title: "Clase Creada!",
-            text: `La clase ( ${clase.nombreClase} ) fue creada correctamente`,
-            icon: "success"
-          });
-          reset()
-        }else{
-            Swal.fire({
-                title: "Ocurrio un error!",
-                text: `El producto " ${clase.nombreClase} " no fue creado. Intenta nuevamente en unos minutos`,
-                icon: "error"
-              });
-        }
+  const { id } = useParams();
+  const navegacion = useNavigate();
+
+  useEffect(() => {
+    if (creando == false) {
+      cargarClase();
+    }
+  }, []);
+
+  const cargarClase = async () => {
+    const respuesta = await obtenerClase(id);
+    if (respuesta.status === 200) {
+      const clase = await respuesta.json();
+      setValue("nombreClase", clase.nombreClase);
+      setValue("nombreProfesor", clase.nombreProfesor);
+      setValue("imagen", clase.imagen);
+      setValue("descripcion_breve", clase.descripcion_breve);
+      setValue("fecha", clase.fecha);
+      setValue("horario", clase.horario);
+      setValue("id", clase.id);
+    }
+  };
+
+  const claseValidada = async (clase) => {
+    if (creando) {
+      const respuesta = await crearClase(clase);
+      if (respuesta.status === 201) {
+        Swal.fire({
+          title: "Clase Creada!",
+          text: `La clase ( ${clase.nombreClase} ) fue creada correctamente`,
+          icon: "success",
+        });
+        reset();
+      } else {
+        Swal.fire({
+          title: "Ocurrio un error!",
+          text: `La clase " ${clase.nombreClase} " no fue creada. Intenta nuevamente en unos minutos`,
+          icon: "error",
+        });
+      }
+    } else {
+      const respuesta = await editarClase(clase, id);
+      if (respuesta.status === 200) {
+        Swal.fire({
+          title: "Clase editada",
+          text: `La clase " ${clase.nombreClase} " fue editada correctamente.`,
+          icon: "success",
+        });
+        navegacion("/administrador");
+      }
+    }
   };
 
   return (
@@ -38,7 +72,7 @@ const FormularioClase = () => {
       <div className="container text-white ">
         <h1 className="display-4 mt-5">Administrar Clase</h1>
         <hr />
-        <Form className="my-4" onSubmit={handleSubmit(claseValidado)}>
+        <Form className="my-4" onSubmit={handleSubmit(claseValidada)}>
           <Form.Group className="mb-3" controlId="formNombreClase">
             <Form.Label>Clase*</Form.Label>
             <Form.Control

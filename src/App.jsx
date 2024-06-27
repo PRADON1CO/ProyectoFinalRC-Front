@@ -41,10 +41,6 @@ function App() {
         ></Route>
 
         <Route path="*" element={<Error404></Error404>}></Route>
-        <Route
-          path="/administrador/formulario"
-          element={<FormularioClase></FormularioClase>}
-        ></Route>
       </Routes>
       <Footer></Footer>
     </BrowserRouter>

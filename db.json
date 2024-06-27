@@ -1,11 +1,11 @@
 {
   "clases": [
     {
-      "nombreClase": "Yoga para Principiantes",
+      "nombreClase": "Yoga para Anazados",
       "nombreProfesor": "Ana García",
       "imagen": "https://images.pexels.com/photos/3822622/pexels-photo-3822622.jpeg",
       "descripcion_breve": "Una introducción suave a las posturas y técnicas de yoga.",
-      "fecha": "Lunes",
+      "fecha": "martes",
       "horario": "08:00 AM - 09:00 AM",
       "id": "yoga-beg-1a2b"
     },
@@ -14,7 +14,7 @@
       "nombreProfesor": "Laura Hernández",
       "imagen": "https://images.pexels.com/photos/4325396/pexels-photo-4325396.jpeg",
       "descripcion_breve": "Relájate y recupérate con posturas sostenidas y suaves.",
-      "fecha": "Miércoles",
+      "fecha": "Martes",
       "horario": "08:00 PM - 09:00 PM",
       "id": "yoga-res-5e6f"
     },
@@ -26,6 +26,15 @@
       "fecha": "Miércoles",
       "horario": "08:00 PM - 09:00 PM",
       "id": "yoga-res-5dfc"
+    },
+    {
+      "nombreClase": "Yoga para Anazados",
+      "nombreProfesor": "Prado lucas",
+      "imagen": "https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg",
+      "descripcion_breve": "dadsadsadasd",
+      "fecha": "Miercoles y Martes",
+      "horario": "06 PM - 07:00 PM",
+      "id": "804b"
     }
   ]
 }
