@@ -13,24 +13,32 @@ import Administrador from "./components/pages/Administrador";
 import FormularioClase from "./components/clases/FormularioClase";
 import { useState } from "react";
 import ListasRutasAdmin from "./components/routes/ListasRutasAdmin";
-import RutasPotegidas from "./components/routes/RutasPotegidas";
+import RutasProtegidas from "./components/routes/RutasProtegidas";
+
 
 function App() {
   const usuario = JSON.parse(sessionStorage.getItem("usuariofitfactory")) || "";
   const [usuarioLogueado, setUsuarioLogueado] = useState(usuario);
   return (
     <BrowserRouter>
-      <Menu usuarioLogueado={usuarioLogueado} setUsuarioLogueado={setUsuarioLogueado}></Menu>
+      <Menu
+        usuarioLogueado={usuarioLogueado}
+        setUsuarioLogueado={setUsuarioLogueado}
+      ></Menu>
       <Routes>
         <Route path="/" element={<Inicio></Inicio>}></Route>
-        <Route path="/login" element={<Login setUsuarioLogueado={setUsuarioLogueado}></Login>}></Route>
+        <Route
+          path="/login"
+          element={<Login setUsuarioLogueado={setUsuarioLogueado}></Login>}
+        ></Route>
         <Route path="/contacto" element={<Contacto></Contacto>}></Route>
         <Route
-          path="/administrador"
-          element={<Administrador></Administrador>}
+          
+          path="/administrador/*"
+          element={<RutasProtegidas>
+            <ListasRutasAdmin></ListasRutasAdmin>
+          </RutasProtegidas>}
         ></Route>
-        <Route path="/administrador/creaar" element={<FormularioClase></FormularioClase>}></Route>
-        <Route path="/administrador/editar" element={<FormularioClase></FormularioClase>}></Route>
 
         <Route path="*" element={<Error404></Error404>}></Route>
         <Route

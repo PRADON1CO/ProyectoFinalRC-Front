@@ -15,7 +15,6 @@ const Login = ({ setUsuarioLogueado }) => {
   const navegacion = useNavigate();
 
   const onSubmit = (usuario) => {
-    console.log(usuario);
     if (login(usuario)) {
       Swal.fire({
         title: "  Usuario logueado",
