@@ -1,14 +1,13 @@
-import { Children } from "react";
 import { Navigate } from "react-router-dom";
 
 
-const RutasPotegidas = ({Children}) => {
+const RutasProtegidas = ({children}) => {
     const userAdmin = JSON.parse(sessionStorage.getItem("usuariofitfactory")) || null
     if (!userAdmin){
         return <Navigate to={"/login"}></Navigate>
     }else{
-        return Children
+        return children
     }
 };
 
-export default RutasPotegidas;
+export default RutasProtegidas;

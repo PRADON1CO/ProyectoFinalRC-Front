@@ -5,16 +5,18 @@ import logo from "../../assets/logoRecortado.png";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 
 const Menu = ({ usuarioLogueado, setUsuarioLogueado }) => {
+
   const navegacion = useNavigate();
+
   const logout = () => {
-    sessionStorage.removeItem(usuariofitfactory);
+    sessionStorage.removeItem('usuariofitfactory');
     setUsuarioLogueado("");
     navegacion("/");
   };
   return (
     <Navbar expand="lg" className="bgVerde">
       <Container fluid>
-        <Navbar.Brand href="#">
+        <Navbar.Brand>
           <Link to="/">
             <img src={logo} alt="Logo" className="imgLogo" />
           </Link>
@@ -22,43 +24,47 @@ const Menu = ({ usuarioLogueado, setUsuarioLogueado }) => {
         <Navbar.Toggle aria-controls="navbarNav" />
         <Navbar.Collapse id="navbarNav">
           <Nav className="mx-auto">
-            <NavLink href="#" to="/" className="nav-link fontWeight">
+            <NavLink to="/" className="nav-link fontWeight">
               Inicio
             </NavLink>
             {
             usuarioLogueado.length > 0 ? (
               <>
                 <NavLink
-                  href="#"
+                
                   to="/administrador"
                   className="nav-link fontWeight"
                 >
                   Administrador
                 </NavLink>
-                <Button variant="link" className="nav-link fontWeight" onClick={logout}>
+                <Button
+                  variant="link"
+                  className="nav-link fontWeight"
+                  onClick={logout}
+                >
                   logout
                 </Button>
               </>
             ) : (
               <>
                 <NavLink
-                  href="#"
+                  
                   to="/contacto"
                   className="nav-link fontWeight"
                 >
                   Contacto
                 </NavLink>
                 <NavLink
-                  href="#"
+                  
                   to=""
                   className="nav-link fontWeight d-lg-none d-md-none"
                 >
                   Nosotros
                 </NavLink>
-                <NavLink href="#" to="" className="nav-link fontWeight">
+                <NavLink to="" className="nav-link fontWeight">
                   Productos
                 </NavLink>
-                <NavLink href="#" to="/login" className="nav-link fontWeight">
+                <NavLink to="/login" className="nav-link fontWeight">
                   Login
                 </NavLink>
               </>

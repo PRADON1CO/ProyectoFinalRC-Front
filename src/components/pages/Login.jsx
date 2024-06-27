@@ -45,48 +45,53 @@ const Login = ({ setUsuarioLogueado }) => {
       <section className="sectionLogin bg-white">
         <div className="text-center">
           <h1 className="my-4">Inicia sesión</h1>
-          <Form onSubmit={handleSubmit(onSubmit)}></Form>
         </div>
-        <Form className="px-2 px-md-5 pb-2 formText">
+
+        <Form
+          onSubmit={handleSubmit(onSubmit)}
+          className="px-2 px-md-5 pb-2 formText"
+        >
           <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label>Email:</Form.Label>
+            <Form.Label>Correo electronico:</Form.Label>
             <Form.Control
               type="email"
               placeholder="Ej: juan@mail.com"
-              {...register("correo", {
+              {...register("email", {
                 required: "El correo es obligatorio",
                 minLength: {
-                  value: 3,
-                  message: "El correo debe contener al menos 3 carácteres",
+                  value: 4,
+                  message: "El email debe contener al menos 4 caracteres",
                 },
                 maxLength: {
                   value: 250,
-                  message: "El correo debe contener como máximo 250 carácteres",
+                  message: "El email debe contener como máximo 250 caracteres",
                 },
                 pattern: {
-                  value: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/,
-                  message: "Ingrese una direccion de correo válida",
+                  value:
+                    /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/,
+                  message:
+                    "El correo debe ser un email valido Ej: nombre@mail.com",
                 },
               })}
             />
             <Form.Text className="text-danger">
-              {errors.correo?.message}
+              {errors.email?.message}
             </Form.Text>
           </Form.Group>
           <Form.Group className="mb-3" controlId="formBasicPassword">
             <Form.Label>Contraseña:</Form.Label>
             <Form.Control
               type="password"
-              placeholder="Ingrese una contraseña"
+              placeholder="ingrese una contraseña"
               {...register("password", {
                 required: "El password es obligatorio",
                 minLength: {
                   value: 8,
-                  message: "El mínimo es de 8 caracteres",
+                  message: "el minimo es de 8 caracteres",
                 },
                 maxLength: {
                   value: 12,
-                  message: "El máximo es de 12 caracteres",
+                  message: "el maximo es de 15 caracteres",
                 },
                 pattern: {
                   value: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/,
@@ -95,43 +100,43 @@ const Login = ({ setUsuarioLogueado }) => {
                 },
               })}
             />
+          </Form.Group>
+
+          <Form.Group className="mb-3">
             <Form.Text className="text-danger">
+              {" "}
               {errors.password?.message}
             </Form.Text>
           </Form.Group>
           <div className="d-flex justify-content-center">
-            <Button
-              className="mx-auto mb-3 bgVerde border-0"
-              variant="success"
-              type="submit"
-            >
-              Ingresar
+            <Button className="bgVerde border-0" type="submit">
+              Enviar
             </Button>
           </div>
-          <div className="d-flex justify-content-center">
-            <Link to="*" className="btn btn-link text-dark">
-              ¿Has olvidado tu contraseña?
-            </Link>
-          </div>
-          <div className="d-flex justify-content-center">
-            <Link to="*" className="btn btn-danger mx-auto mb-3 mt-1 mt-lg-3">
-              <i className="fa-brands fa-google"></i> Ingresar con Google
-            </Link>
-          </div>
-          <div className="d-flex justify-content-center">
-            <Link to="*" className="btn btn-primary mx-auto mb-2 my-lg-3">
-              <i className="fa-brands fa-facebook"></i> Ingresar con Facebook
-            </Link>
-          </div>
-          <div className="d-flex justify-content-center flex-column">
-            <Link to="*" className="text-center text-dark">
-              ¿Aún no te creaste una cuenta?{" "}
-            </Link>
-            <Link to="*" className="btn btn-link text-dark">
-              Crear cuenta
-            </Link>
-          </div>
         </Form>
+        <div className="d-flex justify-content-center">
+          <Link to="*" className="btn btn-link text-dark">
+            ¿Has olvidado tu contraseña?
+          </Link>
+        </div>
+        <div className="d-flex justify-content-center">
+          <Link to="*" className="btn btn-danger mx-auto mb-3 mt-1 mt-lg-3">
+            <i className="fa-brands fa-google"></i> Ingresar con Google
+          </Link>
+        </div>
+        <div className="d-flex justify-content-center">
+          <Link to="*" className="btn btn-primary mx-auto mb-2 my-lg-3">
+            <i className="fa-brands fa-facebook"></i> Ingresar con Facebook
+          </Link>
+        </div>
+        <div className="d-flex justify-content-center flex-column">
+          <Link to="*" className="text-center text-dark">
+            ¿Aún no te creaste una cuenta?{" "}
+          </Link>
+          <Link to="*" className="btn btn-link text-dark">
+            Crear cuenta
+          </Link>
+        </div>
       </section>
     </div>
   );

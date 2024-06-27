@@ -3,7 +3,6 @@ import { Button, Card, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 const CardClases = ({ clase }) => {
-  console.log('hola datos')
   return (
     <Col md={4} lg={4} className="mb-3">
       <Card className="h-100 border-0 efectoCard">
