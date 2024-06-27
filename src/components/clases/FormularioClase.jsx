@@ -30,6 +30,7 @@ const FormularioClase = ({ creando }) => {
       setValue("nombreClase", clase.nombreClase);
       setValue("nombreProfesor", clase.nombreProfesor);
       setValue("imagen", clase.imagen);
+      setValue("imagenClase", clase.imagenClase);
       setValue("descripcion_breve", clase.descripcion_breve);
       setValue("fecha", clase.fecha);
       setValue("horario", clase.horario);
@@ -125,6 +126,23 @@ const FormularioClase = ({ creando }) => {
               type="text"
               placeholder="Ej: https://images.pexels.com/photos/1431282/pexels-photo-1431282.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
               {...register("imagen", {
+                required: "La imagen es obligatoria",
+                pattern: {
+                  value: /(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|jpeg|gif|png)/,
+                  message: "Debe ingresar una URL valida (jpg|jpeg|gif|png)",
+                },
+              })}
+            />
+            <Form.Text className="text-danger">
+              {errors.imagen?.message}
+            </Form.Text>
+          </Form.Group>
+          <Form.Group className="mb-3" controlId="formImagen">
+            <Form.Label>Imagen Clase*</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="Ej: https://images.pexels.com/photos/1431282/pexels-photo-1431282.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+              {...register("imagenClase", {
                 required: "La imagen es obligatoria",
                 pattern: {
                   value: /(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|jpeg|gif|png)/,

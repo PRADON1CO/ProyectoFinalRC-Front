@@ -8,7 +8,7 @@ const CardClases = ({ clase }) => {
       <Card className="h-100 border-0 efectoCard">
         <div>
           <img
-            src={clase.imagen}
+            src={clase.imagenClase}
             alt=""
             className="card-img-top-nueva"
           />
