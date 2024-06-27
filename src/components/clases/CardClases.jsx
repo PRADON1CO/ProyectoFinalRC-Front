@@ -22,7 +22,7 @@ const CardClases = ({ clase }) => {
           </Card.Text>
         </Card.Body>
         <div className="text-center pb-2">
-          <Link to='/'  className="bgVerde border-0 w-auto btn">Solicitar Turno</Link>
+          <Link to='*'  className="bgVerde border-0 w-auto btn">Solicitar Turno</Link>
         </div>
       </Card>
     </Col>
