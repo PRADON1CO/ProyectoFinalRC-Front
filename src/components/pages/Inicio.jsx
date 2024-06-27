@@ -5,23 +5,25 @@ import CardPlanes from "../planes/CardPlanes";
 import CardInstructor from "../clases/CardInstructor";
 import { useEffect, useState } from "react";
 import { listarClases } from "../helpers/queries";
+import planes from "../planes/planes.js";
+
 
 const Inicio = () => {
   const [clases, setClases] = useState([]);
 
   useEffect(() => {
-    obtenerClases()
-  }, [])
+    obtenerClases();
+  }, []);
 
-  const obtenerClases = async() =>{
+  const obtenerClases = async () => {
     const respuesta = await listarClases();
-    if(respuesta.status === 200){
+    if (respuesta.status === 200) {
       const datos = await respuesta.json();
       setClases(datos);
-    }else{
+    } else {
       console.log("Error al obtener los productos");
     }
-  }
+  };
 
   return (
     <div className="mainSection">
@@ -40,22 +42,28 @@ const Inicio = () => {
         <div className="py-2">
           <h2 className="text-center pb-2">- Nuestra Clases -</h2>
           <Row>
-            {
-              clases.map((cardClases) => <CardClases key={cardClases.id} clase = {cardClases}></CardClases>)
-            }
+            {clases.map((cardClases) => (
+              <CardClases key={cardClases.id} clase={cardClases}></CardClases>
+            ))}
           </Row>
         </div>
         <h2 className="text-center pb-2">- Planes -</h2>
         <Row className="justify-content-center">
-        <CardPlanes></CardPlanes>
-        <CardPlanes></CardPlanes>
-        <CardPlanes></CardPlanes>
+            {
+              planes.map((cardPlanes) => (
+                <CardPlanes key={cardPlanes.id} plan={cardPlanes}></CardPlanes>
+              ))
+            }
         </Row>
+
         <h2 className="text-center">- Nuestros Instructores -</h2>
         <Row className="justify-content-center">
-          {
-            clases.map((instructores) => <CardInstructor key={instructores.id} instructor={instructores}></CardInstructor>)
-          }
+          {clases.map((instructores) => (
+            <CardInstructor
+              key={instructores.id}
+              instructor={instructores}
+            ></CardInstructor>
+          ))}
         </Row>
       </Container>
     </div>
