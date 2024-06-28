@@ -1,5 +1,6 @@
 import React from "react";
 import { Button, Card, Col } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const CardPlanes = ({plan}) => {
   return (
@@ -18,7 +19,7 @@ const CardPlanes = ({plan}) => {
             <p className="py-1 p-precio colorVerde fw-bold">Semestre Premiun  <span>$ {plan.semestral}</span></p>
             <hr  className="colorVerde"/>
             <div className="d-flex justify-content-center mt-3">
-              <Button className="w-auto bgVerde border-0">Obtener Plan</Button>
+              <Link to={'/suscribirse'} className="btn w-auto bgVerde border-0">Obtener Plan</Link>
             </div>
         </div>
       </Card>
