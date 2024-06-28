@@ -42,11 +42,7 @@ function App() {
         ></Route>
         <Route path="/nosotros" element={<AcercaDeNosotros></AcercaDeNosotros>}></Route>
         <Route path="*" element={<Error404></Error404>}></Route>
-        <Route
-          path="/administrador/formulario"
-          element={<FormularioClase></FormularioClase>}
-        ></Route>
-        <Route path="/suscribirse" element={<FormularioPlanes></FormularioPlanes>}></Route>
+        <Route path="/suscribirse" element={<FormularioPlanes></FormularioPlanes>}></Route>                                 
       </Routes>
       <Footer></Footer>
     </BrowserRouter>
