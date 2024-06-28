@@ -6,6 +6,7 @@ import CardInstructor from "../clases/CardInstructor";
 import { useEffect, useState } from "react";
 import { listarClases } from "../helpers/queries";
 import planes from "../planes/planes.js";
+import { Link } from "react-router-dom";
 
 
 const Inicio = () => {
@@ -31,9 +32,9 @@ const Inicio = () => {
         <h3 className="">
           Desarrolla tu fuerza interior. Supérate a ti mismo y alcanza tus metas
         </h3>
-        <button className="p-1 rounded-2 bgVerde mt-2 text-white">
+        <Link to={'/suscribirse'} className=" btn p-1 rounded-2 bgVerde mt-2 text-white">
           Comenzar Ahora
-        </button>
+        </Link>
       </div>
       <Container className="py-2">
         <div className="text-center">

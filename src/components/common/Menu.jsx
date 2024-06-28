@@ -56,7 +56,7 @@ const Menu = ({ usuarioLogueado, setUsuarioLogueado }) => {
                 </NavLink>
                 <NavLink
                   
-                  to=""
+                  to="/nosotros"
                   className="nav-link fontWeight d-lg-none d-md-none"
                 >
                   Nosotros

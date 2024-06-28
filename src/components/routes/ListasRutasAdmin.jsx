@@ -6,19 +6,16 @@ const ListasRutasAdmin = () => {
   return (
     <Routes>
       <Route
-        
         path="/"
         element={<Administrador></Administrador>}
       ></Route>
       <Route
-        
         path="/crear"
-        element={<FormularioClase></FormularioClase>}
+        element={<FormularioClase creando={true}></FormularioClase>}
       ></Route>
-      <Route
-        
-        path="/editar"
-        element={<FormularioClase></FormularioClase>}
+      <Route       
+        path="/editar/:id"
+        element={<FormularioClase creando={false}></FormularioClase>}
       ></Route>
     </Routes>
   );

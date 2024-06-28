@@ -25,6 +25,16 @@ export const listarClases = async () => {
     }
 }
 
+export const obtenerClase = async (id)=> {
+    try{
+        const respuesta = await fetch ('http://localhost:3000/clases/'+id);
+        return respuesta;
+    }catch(error){
+        console.error(error)
+    }
+}
+
+
 //POST
 export const crearClase = async (claseNueva) => {
     try {
@@ -52,3 +62,21 @@ export const eliminarClaseAPI = async (id) => {
         console.error(error)
     }
 };
+
+//PATCH
+export const editarClase = async(claseActualizada, id)=>{
+    try{
+        const respuesta = await fetch ('http://localhost:3000/clases/'+id,{
+            method: "PUT",
+            headers:{
+                "Content-Type":"application/json"
+            },
+            body: JSON.stringify(claseActualizada)
+        });
+        return respuesta;
+    }catch(error){
+        console.error(error)
+    }
+};
+
+
