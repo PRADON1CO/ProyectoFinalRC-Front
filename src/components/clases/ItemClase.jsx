@@ -1,6 +1,7 @@
 import { Button } from "react-bootstrap";
 import { eliminarClaseAPI, listarClases } from "../helpers/queries";
 import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 
 const ItemClase = ({ clase, setClases }) => {
 
@@ -57,9 +58,9 @@ const ItemClase = ({ clase, setClases }) => {
         ></img>
       </td>
       <td className="text-center">
-        <button className="btn m-1 btnOpciones">
+        <Link to={'/administrador/editar/' + clase.id} className="btn m-1 btnOpciones">
           <i className="bi bi-pencil-square"></i>
-        </button>
+        </Link>
         <button className="btn btnOpciones">
           <i className="bi bi-trash" onClick={borrarClase} ></i>
         </button>

@@ -27,7 +27,7 @@ const Administrador = () => {
       <section className="container mainSection ">
         <div className="d-flex justify-content-between align-items-center mt-5">
           <h1 className="display-5 text-white">Gestionar Clases</h1>
-          <Link className="btn bgVerde" to={"/administrador/formulario"}>
+          <Link className="btn bgVerde" to={"/administrador/crear"}>
             <i className="bi bi-file-earmark-plus fs-4"></i>
           </Link>
         </div>

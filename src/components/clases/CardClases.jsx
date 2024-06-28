@@ -8,7 +8,7 @@ const CardClases = ({ clase }) => {
       <Card className="h-100 border-0 efectoCard">
         <div>
           <img
-            src={clase.imagen}
+            src={clase.imagenClase}
             alt=""
             className="card-img-top-nueva"
           />
@@ -22,7 +22,7 @@ const CardClases = ({ clase }) => {
           </Card.Text>
         </Card.Body>
         <div className="text-center pb-2">
-          <Link to='/'  className="bgVerde border-0 w-auto btn">Solicitar Turno</Link>
+          <Link to='*'  className="bgVerde border-0 w-auto btn">Solicitar Turno</Link>
         </div>
       </Card>
     </Col>
