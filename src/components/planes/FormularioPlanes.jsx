@@ -84,7 +84,7 @@ const FormularioPlanes = () => {
               required: "La categoria es obligatoria",
             })}
           >
-            <option value="">Seleccione una Plan</option>
+            <option value="">Seleccione un Plan</option>
             <option value="SoloMusculacion">Solo musculacion</option>
             <option value="soloclases">solo clases</option>
             <option value="Full">Full</option>
