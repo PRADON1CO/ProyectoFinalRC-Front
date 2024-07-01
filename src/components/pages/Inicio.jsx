@@ -44,7 +44,7 @@ const Inicio = () => {
           <h2 className="text-center pb-2">- Nuestra Clases -</h2>
           <Row>
             {clases.map((cardClases) => (
-              <CardClases key={cardClases.id} clase={cardClases}></CardClases>
+              <CardClases key={cardClases._id} clase={cardClases}></CardClases>
             ))}
           </Row>
         </div>
@@ -52,7 +52,7 @@ const Inicio = () => {
         <Row className="justify-content-center">
             {
               planes.map((cardPlanes) => (
-                <CardPlanes key={cardPlanes.id} plan={cardPlanes}></CardPlanes>
+                <CardPlanes key={cardPlanes._id} plan={cardPlanes}></CardPlanes>
               ))
             }
         </Row>
@@ -61,7 +61,7 @@ const Inicio = () => {
         <Row className="justify-content-center">
           {clases.map((instructores) => (
             <CardInstructor
-              key={instructores.id}
+              key={instructores._id}
               instructor={instructores}
             ></CardInstructor>
           ))}
