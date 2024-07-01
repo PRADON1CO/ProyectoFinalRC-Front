@@ -35,7 +35,7 @@ const Administrador = () => {
         <Table responsive  bordered hover>
           <thead>
             <tr className="text-center">
-              <th>Cod</th>
+              <th>Clase</th>
               <th>Profesor/a</th>
               <th>Fecha</th>
               <th>Horario</th>
@@ -45,7 +45,7 @@ const Administrador = () => {
           </thead>
           <tbody>
             {
-              clases.map((itemClase) => <ItemClase key={itemClase.id} clase={itemClase} setClases={setClases}></ItemClase> )
+              clases.map((itemClase) => <ItemClase key={itemClase._id} clase={itemClase} setClases={setClases}></ItemClase> )
             }
           </tbody>
         </Table>

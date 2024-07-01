@@ -18,7 +18,7 @@ const ItemClase = ({ clase, setClases }) => {
     }).then(async (result) => {
       if (result.isConfirmed) {
         // pedir a la api realizar el delete
-        const respuesta = await eliminarClaseAPI(clase.id);
+        const respuesta = await eliminarClaseAPI(clase._id);
 
         console.log(respuesta);
         Swal.fire({
@@ -46,7 +46,7 @@ const ItemClase = ({ clase, setClases }) => {
 
   return (
     <tr>
-      <td className="text-center">{clase.id}</td>
+      <td className="text-center">{clase.nombreClase}</td>
       <td>{clase.nombreProfesor}</td>
       <td className="">{clase.fecha}</td>
       <td>{clase.horario}</td>
@@ -58,7 +58,7 @@ const ItemClase = ({ clase, setClases }) => {
         ></img>
       </td>
       <td className="text-center">
-        <Link to={'/administrador/editar/' + clase.id} className="btn m-1 btnOpciones">
+        <Link to={'/administrador/editar/' + clase._id} className="btn m-1 btnOpciones">
           <i className="bi bi-pencil-square"></i>
         </Link>
         <button className="btn btnOpciones">
