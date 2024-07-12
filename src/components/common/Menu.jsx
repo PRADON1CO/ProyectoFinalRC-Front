@@ -128,8 +128,8 @@ const Menu = ({ usuarioLogueado, setUsuarioLogueado }) => {
             )}
           </Nav>
           <div className="navbar">
-            <p>
-              <i className=""></i>
+            <p className="p-0 paddingCero">
+              <i className="paddingCero"></i>
               {temp !== null ? `${temp}°C` : "Cargando..."}
             </p>
           </div>

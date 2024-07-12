@@ -70,6 +70,10 @@
   object-fit: cover;
 }
 
+.paddingCero{
+  padding: 0px !important;
+}
+
 @media (min-width: 768px){
   .nav-item, .navbar p, .navbar i{
     font-size: 21px;
