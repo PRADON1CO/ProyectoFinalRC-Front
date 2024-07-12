@@ -3,6 +3,10 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import logo from "../../assets/logoRecortado.png";
 import { Link, NavLink, useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+
+
+
 
 const Menu = ({ usuarioLogueado, setUsuarioLogueado }) => {
 
@@ -13,6 +17,48 @@ const Menu = ({ usuarioLogueado, setUsuarioLogueado }) => {
     setUsuarioLogueado("");
     navegacion("/");
   };
+
+
+  /*elopez inicio*/
+
+  const [clima, setClima] = useState('');
+
+  useEffect(() => {consultarAPI();}, []);
+
+  const consultarAPI = async () => {
+    try {
+      
+      const respuesta = await fetch(
+        "https://api.openweathermap.org/data/2.5/weather?q=Tucuman,ar&APPID=96e54c77ff9c0e3692eef44bac90ca30"
+      );
+      //almacenar la respuesta en el state
+      if (respuesta.status === 200) {
+        const datos = await respuesta.json();
+        console.log(datos);
+        setClima(datos);
+      }
+    } catch (error) {
+      console.error(error);
+
+    }
+  };
+
+  // const{main:{temp}} = clima
+  // const kelvinACentigrados = (temperatura) => parseInt(temperatura - 273.15);
+
+
+  const kelvinACentigrados = (temperatura) => parseInt(temperatura - 273.15);
+
+  // Add a conditional check here
+  const { name, main } = clima;
+  const temp = main ? kelvinACentigrados(main.temp) : null;
+  const temp_max = main ? kelvinACentigrados(main.temp_max) : null;
+  const temp_min = main ? kelvinACentigrados(main.temp_min) : null;
+
+
+  /*elopez fin*/
+
+
   return (
     <Navbar expand="lg" className="bgVerde">
       <Container fluid>
@@ -72,7 +118,8 @@ const Menu = ({ usuarioLogueado, setUsuarioLogueado }) => {
           </Nav>
           <div className="navbar">
             <p>
-              <i className="bi bi-cloud-hail-fill"></i> 9°c
+              <i className=""></i>
+              {temp !== null ? `${temp}°C` : "Cargando..."}
             </p>
           </div>
         </Navbar.Collapse>
