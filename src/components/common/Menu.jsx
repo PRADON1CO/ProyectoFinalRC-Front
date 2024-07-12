@@ -96,6 +96,7 @@ const Menu = ({ usuarioLogueado, setUsuarioLogueado }) => {
                 <NavLink to="/nosotros" className="nav-link fontWeight">
                   Nosotros
                 </NavLink>
+                <div className="d-flex justify-content-start">
                 <Button
                   variant="link"
                   className="nav-link fontWeight"
@@ -103,6 +104,7 @@ const Menu = ({ usuarioLogueado, setUsuarioLogueado }) => {
                 >
                   logout
                 </Button>
+                </div>
               </>
             ) : (
               <>
