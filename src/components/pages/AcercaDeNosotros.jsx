@@ -74,8 +74,8 @@ const AcercaDeNosotros = () => {
                 <Card.Body>
                   <Card.Title className="text-center">Brian Nicolas Prado</Card.Title>
                   <div className="d-flex justify-content-center">
-                  <a href="https://www.linkedin.com/in/brian-nicol%C3%A1s-prado-83553a270/"><i class="bi bi-linkedin text-dark tamanioIconosNosotros px-2 "></i></a>
-                  <a href="https://github.com/PRADON1CO"><i class="bi bi-github text-dark tamanioIconosNosotros px-2"></i></a>
+                  <a href="https://www.linkedin.com/in/brian-nicol%C3%A1s-prado-83553a270/" className="iconos"><i class="bi bi-linkedin text-dark tamanioIconosNosotros px-2 "></i></a>
+                  <a href="https://github.com/PRADON1CO" className="iconos"><i class="bi bi-github text-dark tamanioIconosNosotros px-2"></i></a>
                   </div>
                 </Card.Body>
               </Card>
@@ -88,8 +88,8 @@ const AcercaDeNosotros = () => {
                 <Card.Body>
                   <Card.Title className="text-center">Natasha Valdez</Card.Title>
                   <div className="d-flex justify-content-center">
-                  <Link to={'*'}><i class="bi bi-linkedin text-dark tamanioIconosNosotros px-2 "></i></Link>
-                  <a href="https://github.com/Valdez-Natasha"><i class="bi bi-github text-dark tamanioIconosNosotros px-2"></i></a>
+                  <Link to={'*'} className="iconos"><i class="bi bi-linkedin text-dark tamanioIconosNosotros px-2 "></i></Link>
+                  <a href="https://github.com/Valdez-Natasha" className="iconos"><i class="bi bi-github text-dark tamanioIconosNosotros px-2"></i></a>
                   </div>
                 </Card.Body>
               </Card>
@@ -102,8 +102,8 @@ const AcercaDeNosotros = () => {
                 <Card.Body>
                   <Card.Title className="text-center">Esteban Lopez</Card.Title>
                   <div className="d-flex justify-content-center">
-                  <Link to={'*'}><i class="bi bi-linkedin text-dark tamanioIconosNosotros px-2 "></i></Link>
-                  <a href="https://github.com/elopezgit"><i class="bi bi-github text-dark tamanioIconosNosotros px-2"></i></a>
+                  <Link to={'*'} className="iconos"><i class="bi bi-linkedin text-dark tamanioIconosNosotros px-2 "></i></Link>
+                  <a href="https://github.com/elopezgit" className="iconos"><i class="bi bi-github text-dark tamanioIconosNosotros px-2"></i></a>
                   </div>
                 </Card.Body>
               </Card>
