@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Container, Card, Row, Col, Button, Carousel } from "react-bootstrap";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import brian from "../../assets/brian.png";
 import natashav from "../../assets/natashav.jpg";
 import esteban from "../../assets/esteban.png";
@@ -86,8 +86,11 @@ const AcercaDeNosotros = () => {
                   <Card.Img variant="top" src={natashav} alt="Valdez Natasha" />
                 </div>
                 <Card.Body>
-                  <Card.Title>Natasha Valdez</Card.Title>
-                  <Card.Text>Desarrollador FullStack - @RollingCode</Card.Text>
+                  <Card.Title className="text-center">Natasha Valdez</Card.Title>
+                  <div className="d-flex justify-content-center">
+                  <Link to={'*'}><i class="bi bi-linkedin text-dark tamanioIconosNosotros px-2 "></i></Link>
+                  <a href="https://github.com/Valdez-Natasha"><i class="bi bi-github text-dark tamanioIconosNosotros px-2"></i></a>
+                  </div>
                 </Card.Body>
               </Card>
             </Col>
@@ -97,8 +100,11 @@ const AcercaDeNosotros = () => {
                   <Card.Img variant="top" src={esteban} alt="Esteban Lopez" />
                 </div>
                 <Card.Body>
-                  <Card.Title>Esteban Lopez</Card.Title>
-                  <Card.Text>Desarrollador FullStack - @RollingCode</Card.Text>
+                  <Card.Title className="text-center">Esteban Lopez</Card.Title>
+                  <div className="d-flex justify-content-center">
+                  <Link to={'*'}><i class="bi bi-linkedin text-dark tamanioIconosNosotros px-2 "></i></Link>
+                  <a href="https://github.com/elopezgit"><i class="bi bi-github text-dark tamanioIconosNosotros px-2"></i></a>
+                  </div>
                 </Card.Body>
               </Card>
             </Col>
