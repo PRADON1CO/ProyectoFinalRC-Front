@@ -32,5 +32,11 @@
 @media (min-width: 992px){
     .bannerContacto{
         height: 700px;
+        background-position: bottom;
+    }
+    .banner{
+        background-position: bottom;
+        height: 650px;
     }
 }
+
