@@ -70,8 +70,8 @@
   object-fit: cover;
 }
 
-.paddingCero{
-  padding: 0px !important;
+.tamanioIconosNosotros{
+  font-size: 25px;
 }
 
 @media (min-width: 768px){
