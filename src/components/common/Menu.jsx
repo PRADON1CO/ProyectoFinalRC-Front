@@ -83,6 +83,20 @@ const Menu = ({ usuarioLogueado, setUsuarioLogueado }) => {
                 >
                   Administrador
                 </NavLink>
+                <NavLink
+                  
+                  to="/contacto"
+                  className="nav-link fontWeight"
+                >
+                  Contacto
+                </NavLink>
+                <NavLink to="*" className="nav-link fontWeight">
+                  Productos
+                </NavLink>
+                <NavLink to="/nosotros" className="nav-link fontWeight">
+                  Nosotros
+                </NavLink>
+                <div className="d-flex justify-content-start">
                 <Button
                   variant="link"
                   className="nav-link fontWeight"
@@ -90,6 +104,7 @@ const Menu = ({ usuarioLogueado, setUsuarioLogueado }) => {
                 >
                   logout
                 </Button>
+                </div>
               </>
             ) : (
               <>
@@ -100,15 +115,11 @@ const Menu = ({ usuarioLogueado, setUsuarioLogueado }) => {
                 >
                   Contacto
                 </NavLink>
-                <NavLink
-                  
-                  to="/nosotros"
-                  className="nav-link fontWeight d-lg-none d-md-none"
-                >
-                  Nosotros
-                </NavLink>
                 <NavLink to="*" className="nav-link fontWeight">
                   Productos
+                </NavLink>
+                <NavLink to="/nosotros" className="nav-link fontWeight">
+                  Nosotros
                 </NavLink>
                 <NavLink to="/login" className="nav-link fontWeight">
                   Login
@@ -117,8 +128,8 @@ const Menu = ({ usuarioLogueado, setUsuarioLogueado }) => {
             )}
           </Nav>
           <div className="navbar">
-            <p>
-              <i className=""></i>
+            <p className="p-0 paddingCero">
+              <i className="paddingCero"></i>
               {temp !== null ? `${temp}°C` : "Cargando..."}
             </p>
           </div>

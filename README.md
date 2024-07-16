@@ -167,7 +167,7 @@ La aplicación está desplegada en Netlify. Puedes acceder haciendo clic en el s
 
 4. Crea un archivo .env en la raíz del proyecto y configura las variables de entorno necesarias. Aquí hay un ejemplo:
 
-* MONGODB_URI=url
+* VITE_API_CLASES=url
 
 ## Autores
 

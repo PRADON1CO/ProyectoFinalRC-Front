@@ -70,6 +70,14 @@
   object-fit: cover;
 }
 
+.tamanioIconosNosotros{
+  font-size: 25px;
+}
+
+.iconos:hover{
+  transform: scale(1.2);
+}
+
 @media (min-width: 768px){
   .nav-item, .navbar p, .navbar i{
     font-size: 21px;

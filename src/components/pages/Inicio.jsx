@@ -42,7 +42,7 @@ const Inicio = () => {
         </div>
         <div className="py-2">
           <h2 className="text-center pb-2">- Nuestra Clases -</h2>
-          <Row>
+          <Row className="justify-content-center">
             {clases.map((cardClases) => (
               <CardClases key={cardClases._id} clase={cardClases}></CardClases>
             ))}
