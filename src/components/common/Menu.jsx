@@ -14,7 +14,7 @@ const Menu = ({ usuarioLogueado, setUsuarioLogueado }) => {
 
   const logout = () => {
     sessionStorage.removeItem('usuariofitfactory');
-    setUsuarioLogueado("");
+    setUsuarioLogueado({});
     navegacion("/");
   };
 
@@ -74,7 +74,7 @@ const Menu = ({ usuarioLogueado, setUsuarioLogueado }) => {
               Inicio
             </NavLink>
             {
-            usuarioLogueado.length > 0 ? (
+            usuarioLogueado.email ? (
               <>
                 <NavLink
                 

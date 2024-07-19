@@ -1,23 +1,21 @@
 // Trabajer la logica y declarar el usuario
-const userAdmin = {
-  email: "admin@fitfactory.com",
-  password: "Fitfac1234",
-};
+const URL_Usuario = import.meta.env.VITE_API_USUARIO
 
-export const login = (usuario) => {
-  if (
-    usuario.email === userAdmin.email &&
-    usuario.password === userAdmin.password
-  ) {
-    sessionStorage.setItem(
-      "usuariofitfactory",
-      JSON.stringify(userAdmin.email)
-    );
-    return true;
-  } else {
-    return false;
+export const login = async (usuario) =>{
+  try {
+    const respuesta = await fetch(URL_Usuario, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(usuario),
+    });
+    return  respuesta
+  } catch (error) {
+    console.error(error);
+    return { error: "Error en el login" };
   }
-};
+}
 
 const URIClases = import.meta.env.VITE_API_CLASES;
 
@@ -47,6 +45,7 @@ export const crearClase = async (claseNueva) => {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        "x-token": JSON.parse(sessionStorage.getItem('usuariofitfactory')).token
       },
       body: JSON.stringify(claseNueva),
     });
@@ -61,6 +60,9 @@ export const eliminarClaseAPI = async (id) => {
   try {
     const respuesta = await fetch(URIClases + id, {
       method: "DELETE",
+      headers: {
+        "x-token": JSON.parse(sessionStorage.getItem('usuariofitfactory')).token
+      }
     });
     return respuesta;
   } catch (error) {
@@ -75,6 +77,7 @@ export const editarClase = async (claseActualizada, id) => {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
+        "x-token": JSON.parse(sessionStorage.getItem('usuariofitfactory')).token
       },
       body: JSON.stringify(claseActualizada),
     });
