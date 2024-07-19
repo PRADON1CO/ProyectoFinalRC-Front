@@ -14,21 +14,38 @@ const Login = ({ setUsuarioLogueado }) => {
 
   const navegacion = useNavigate();
 
-  const onSubmit = (usuario) => {
-    if (login(usuario)) {
-      Swal.fire({
-        title: "  Usuario logueado",
-        text: "Bienvenido a Fit Factory",
-        icon: "success",
-      });
-      setUsuarioLogueado(usuario.email);
-      navegacion("/administrador");
-    } else {
-      Swal.fire({
-        title: "Error en el login",
-        text: "Email o contraseña incorrecta",
-        icon: "error",
-      });
+  const onSubmit = async (usuario) => {
+    const respuesta = await login(usuario);
+    try {
+      if (respuesta.status === 200) {
+         //aqui el usuario ya esta logueado
+        Swal.fire(
+          "¡Bienvenido!",
+          "Has iniciado sesión correctamente",
+          "success"
+        );
+        const datos = await respuesta.json();
+        //actualizar el sessionStorage
+        sessionStorage.setItem(
+          "usuariofitfactory",
+          JSON.stringify({ email: datos.email, token: datos.token })
+        );
+         //actualizar el state
+        setUsuarioLogueado(datos);
+        navegacion("/administrador");
+      } else {
+        Swal.fire(
+          "Ocurrió un error",
+          "Correo o contraseña incorrectos",
+          "error"
+        );
+      }
+    } catch (error) {
+      Swal.fire(
+        "Ocurrió un error",
+        "Error procesando la respuesta del servidor",
+        "error"
+      );
     }
   };
 

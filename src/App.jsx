@@ -18,7 +18,7 @@ import AcercaDeNosotros from "./components/pages/AcercaDeNosotros";
 import FormularioPlanes from "./components/planes/FormularioPlanes";
 
 function App() {
-  const usuario = JSON.parse(sessionStorage.getItem("usuariofitfactory")) || "";
+  const usuario = JSON.parse(sessionStorage.getItem("usuariofitfactory")) || {};
   const [usuarioLogueado, setUsuarioLogueado] = useState(usuario);
   return (
     <BrowserRouter>
