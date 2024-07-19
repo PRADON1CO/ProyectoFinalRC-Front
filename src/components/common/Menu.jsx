@@ -3,6 +3,10 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import logo from "../../assets/logoRecortado.png";
 import { Link, NavLink, useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+
+
+
 
 const Menu = ({ usuarioLogueado, setUsuarioLogueado }) => {
 
@@ -10,9 +14,51 @@ const Menu = ({ usuarioLogueado, setUsuarioLogueado }) => {
 
   const logout = () => {
     sessionStorage.removeItem('usuariofitfactory');
-    setUsuarioLogueado("");
+    setUsuarioLogueado({});
     navegacion("/");
   };
+
+
+  /*elopez inicio*/
+
+  const [clima, setClima] = useState('');
+
+  useEffect(() => {consultarAPI();}, []);
+
+  const consultarAPI = async () => {
+    try {
+      
+      const respuesta = await fetch(
+        "https://api.openweathermap.org/data/2.5/weather?q=Tucuman,ar&APPID=96e54c77ff9c0e3692eef44bac90ca30"
+      );
+      //almacenar la respuesta en el state
+      if (respuesta.status === 200) {
+        const datos = await respuesta.json();
+        console.log(datos);
+        setClima(datos);
+      }
+    } catch (error) {
+      console.error(error);
+
+    }
+  };
+
+  // const{main:{temp}} = clima
+  // const kelvinACentigrados = (temperatura) => parseInt(temperatura - 273.15);
+
+
+  const kelvinACentigrados = (temperatura) => parseInt(temperatura - 273.15);
+
+  // Add a conditional check here
+  const { name, main } = clima;
+  const temp = main ? kelvinACentigrados(main.temp) : null;
+  const temp_max = main ? kelvinACentigrados(main.temp_max) : null;
+  const temp_min = main ? kelvinACentigrados(main.temp_min) : null;
+
+
+  /*elopez fin*/
+
+
   return (
     <Navbar expand="lg" className="bgVerde">
       <Container fluid>
@@ -28,7 +74,7 @@ const Menu = ({ usuarioLogueado, setUsuarioLogueado }) => {
               Inicio
             </NavLink>
             {
-            usuarioLogueado.length > 0 ? (
+            usuarioLogueado.email ? (
               <>
                 <NavLink
                 
@@ -37,6 +83,20 @@ const Menu = ({ usuarioLogueado, setUsuarioLogueado }) => {
                 >
                   Administrador
                 </NavLink>
+                <NavLink
+                  
+                  to="/contacto"
+                  className="nav-link fontWeight"
+                >
+                  Contacto
+                </NavLink>
+                <NavLink to="*" className="nav-link fontWeight">
+                  Productos
+                </NavLink>
+                <NavLink to="/nosotros" className="nav-link fontWeight">
+                  Nosotros
+                </NavLink>
+                <div className="d-flex justify-content-start">
                 <Button
                   variant="link"
                   className="nav-link fontWeight"
@@ -44,6 +104,7 @@ const Menu = ({ usuarioLogueado, setUsuarioLogueado }) => {
                 >
                   logout
                 </Button>
+                </div>
               </>
             ) : (
               <>
@@ -54,15 +115,11 @@ const Menu = ({ usuarioLogueado, setUsuarioLogueado }) => {
                 >
                   Contacto
                 </NavLink>
-                <NavLink
-                  
-                  to="/nosotros"
-                  className="nav-link fontWeight d-lg-none d-md-none"
-                >
-                  Nosotros
-                </NavLink>
                 <NavLink to="*" className="nav-link fontWeight">
                   Productos
+                </NavLink>
+                <NavLink to="/nosotros" className="nav-link fontWeight">
+                  Nosotros
                 </NavLink>
                 <NavLink to="/login" className="nav-link fontWeight">
                   Login
@@ -71,8 +128,9 @@ const Menu = ({ usuarioLogueado, setUsuarioLogueado }) => {
             )}
           </Nav>
           <div className="navbar">
-            <p>
-              <i className="bi bi-cloud-hail-fill"></i> 9°c
+            <p className="p-0 paddingCero">
+              <i className="paddingCero"></i>
+              {temp !== null ? `${temp}°C` : "Cargando..."}
             </p>
           </div>
         </Navbar.Collapse>

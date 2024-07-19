@@ -121,7 +121,7 @@ const FormularioClase = ({ creando }) => {
             </Form.Text>
           </Form.Group>
           <Form.Group className="mb-3" controlId="formImagen">
-            <Form.Label>Imagen URL*</Form.Label>
+            <Form.Label>Imagen Instructor*</Form.Label>
             <Form.Control
               type="text"
               placeholder="Ej: https://images.pexels.com/photos/1431282/pexels-photo-1431282.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"

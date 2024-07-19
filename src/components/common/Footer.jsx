@@ -18,9 +18,9 @@ const Footer = () => {
             </Link>
             <Link
               className="text-decoration-none link-dark text-white"
-              to="/login"
+              to="/contacto"
             >
-              <p>Login</p>
+              <p>Contacto</p>
             </Link>
             <Link
               className="text-decoration-none link-dark text-white"
@@ -30,9 +30,9 @@ const Footer = () => {
             </Link>
             <Link
               className="text-decoration-none link-dark text-white"
-              to="/contacto"
+              to="/login"
             >
-              <p>Contacto</p>
+              <p>Login</p>
             </Link>
           </Col>
           <Col xs={12} md={4} lg={3} className="">
