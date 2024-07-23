@@ -3,6 +3,7 @@ import { Button, Form } from "react-bootstrap";
 import "../../styles/contacto.css";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import Swal from "sweetalert2";
 
 const Contacto = () => {
   const {
@@ -14,6 +15,14 @@ const Contacto = () => {
   const onSubmit = (email) => {
     console.log("enviando");
   };
+
+  const alerta = ()=>{
+    Swal.fire({
+      icon: "error",
+      title: "Oops...",
+      text: "En este momento no se puede contactar con nosotros!",
+    });
+  }
 
   return (
     <>
@@ -129,7 +138,7 @@ const Contacto = () => {
               </Form.Text>
             </Form.Group>
             <div className="text-end mt-3 d-flex justify-content-center">
-              <Button type="submit" className=" btn px-5 bgVerde border-0">
+              <Button type="submit" onClick={alerta} className=" btn px-5 bgVerde border-0">
                 Enviar
               </Button>
             </div>
