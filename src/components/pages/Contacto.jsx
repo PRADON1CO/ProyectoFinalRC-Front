@@ -13,7 +13,7 @@ const Contacto = () => {
   } = useForm();
 
   const onSubmit = (email) => {
-    console.log("enviando");
+    alerta();
   };
 
   const alerta = ()=>{
@@ -138,7 +138,7 @@ const Contacto = () => {
               </Form.Text>
             </Form.Group>
             <div className="text-end mt-3 d-flex justify-content-center">
-              <Button type="submit" onClick={alerta} className=" btn px-5 bgVerde border-0">
+              <Button type="submit" className=" btn px-5 bgVerde border-0">
                 Enviar
               </Button>
             </div>
