@@ -5,9 +5,6 @@ import logo from "../../assets/logoRecortado.png";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 
-
-
-
 const Menu = ({ usuarioLogueado, setUsuarioLogueado }) => {
 
   const navegacion = useNavigate();
@@ -17,9 +14,6 @@ const Menu = ({ usuarioLogueado, setUsuarioLogueado }) => {
     setUsuarioLogueado({});
     navegacion("/");
   };
-
-
-  /*elopez inicio*/
 
   const [clima, setClima] = useState('');
 
@@ -42,20 +36,10 @@ const Menu = ({ usuarioLogueado, setUsuarioLogueado }) => {
     }
   };
 
-  // const{main:{temp}} = clima
-  // const kelvinACentigrados = (temperatura) => parseInt(temperatura - 273.15);
-
-
   const kelvinACentigrados = (temperatura) => parseInt(temperatura - 273.15);
 
-  // Add a conditional check here
   const { name, main } = clima;
   const temp = main ? kelvinACentigrados(main.temp) : null;
-  const temp_max = main ? kelvinACentigrados(main.temp_max) : null;
-  const temp_min = main ? kelvinACentigrados(main.temp_min) : null;
-
-
-  /*elopez fin*/
 
 
   return (
