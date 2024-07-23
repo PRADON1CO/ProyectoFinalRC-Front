@@ -29,6 +29,14 @@
     font-size: 23px;
 }
 
+.swal2-styled.swal2-confirm {
+    background-color: #7fb80f;
+}
+  
+.swal2-styled.swal2-confirm:hover {
+    background-color: #7fb50f;
+}
+
 @media (min-width: 992px){
     .bannerContacto{
         height: 700px;
