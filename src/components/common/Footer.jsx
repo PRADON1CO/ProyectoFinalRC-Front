@@ -9,7 +9,9 @@ const Footer = () => {
       <Container fluid className="pt-1 mt-auto bgVerde">
         <Row>
           <Col md={12} lg={3} className="text-center">
-            <img src={logo} alt="" className="" />
+            <Link to={'/'}>
+              <img src={logo} alt="Logo FitFactory" className="" />
+            </Link>
           </Col>
           <Col className="d-none d-md-block text-white">
             <h4 className="text-white">Opciones</h4>
