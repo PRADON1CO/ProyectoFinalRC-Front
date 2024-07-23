@@ -9,7 +9,7 @@ const Footer = () => {
       <Container fluid className="pt-1 mt-auto bgVerde">
         <Row>
           <Col md={12} lg={3} className="text-center">
-            <Link to={'/'}>
+            <Link to={"/"}>
               <img src={logo} alt="Logo FitFactory" className="" />
             </Link>
           </Col>
@@ -54,22 +54,29 @@ const Footer = () => {
           </Col>
           <Col xs={12} md={4} lg={3} className="">
             <h4 className="text-white">Contacto</h4>
-            <div>
-              <div>
-                <p className="text-white link-dark">
-                  <i className="bi bi-whatsapp"></i> 123-1234567
-                </p>
-                <p className="text-white link-dark">
-                  <i className="bi bi-instagram"></i> FitFactory
-                </p>
-                <p className="text-white link-dark">
-                  <i className="bi bi-facebook"></i> FitFactory
-                </p>
-                <p className="text-white link-dark">
-                  <i className="bi bi-geo-alt-fill"></i> Gral. Paz 576
-                </p>
-              </div>
-            </div>
+            <Link
+              to={"*"}
+              className="text-decoration-none text-white link-dark"
+            >
+              <p>
+                <i className="bi bi-whatsapp"></i> 123-1234567
+              </p>
+            </Link>
+            <Link to={'*'} className="text-white link-dark text-decoration-none">
+              <p>
+                <i className="bi bi-instagram"></i> FitFactory
+              </p>
+            </Link>
+            <Link to={'*'} className="text-white link-dark text-decoration-none">
+              <p>
+                <i className="bi bi-facebook"></i> FitFactory
+              </p>
+            </Link>
+            <Link to={'*'} className="text-white link-dark text-decoration-none">
+              <p>
+                <i className="bi bi-geo-alt-fill"></i> Gral. Paz 576
+              </p>
+            </Link>
           </Col>
         </Row>
       </Container>
