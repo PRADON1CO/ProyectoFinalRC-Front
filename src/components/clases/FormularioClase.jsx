@@ -91,6 +91,10 @@ const FormularioClase = ({ creando }) => {
                   message:
                     "Debe ingresar como maximo 50 caracteres para el nombre de la clase",
                 },
+                pattern: {
+                  value: /^[a-zA-Z\s]+$/,
+                  message: "Debe ingresar un nombre valido Ej: Pilates"
+                }
               })}
             />
             <Form.Text className="text-danger">
@@ -115,7 +119,7 @@ const FormularioClase = ({ creando }) => {
                     "Debe ingresar como maximo 50 caracteres para el nombre del profesor",
                 },
                 pattern: {
-                  value: /^[a-zA-Z]+$/,
+                  value: /^[a-zA-Z\s]+$/,
                   message: "Debe ingresar un nombre valido Ej: Prado Nicolas"
                 }
               })}
