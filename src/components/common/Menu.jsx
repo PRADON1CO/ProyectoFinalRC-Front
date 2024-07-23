@@ -34,7 +34,6 @@ const Menu = ({ usuarioLogueado, setUsuarioLogueado }) => {
       //almacenar la respuesta en el state
       if (respuesta.status === 200) {
         const datos = await respuesta.json();
-        console.log(datos);
         setClima(datos);
       }
     } catch (error) {
